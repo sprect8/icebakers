@@ -1,7 +1,7 @@
 import User, { UserSchema } from "./User"
 
 export default {
-  users: {
+  User: {
     model: User,
     schema: UserSchema,
   },

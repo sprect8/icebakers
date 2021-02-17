@@ -22,7 +22,7 @@ const options = {
     // The second argument can be used to pass custom models and schemas
     {
       models: {
-        users: Models.users,
+        User: Models.User,
       },
     }
   ),
@@ -80,7 +80,7 @@ const options = {
     session: async (session, user) => {
       //session.customSessionProperty = 'bar'
       session.user.address = user.erctwenty;
-      console.log(session.user.address, user);
+      console.log(session, user);
       return Promise.resolve(session);
     },
 
@@ -97,6 +97,7 @@ const options = {
       //const isSignIn = (user) ? true : false
       // Add auth_time to token on signin in
       //if (isSignIn) { token.auth_time = Math.floor(Date.now() / 1000) }
+      console.log(user, account, profile);
       return Promise.resolve(token);
     },
     redirect: async (url, baseUrl) => {
