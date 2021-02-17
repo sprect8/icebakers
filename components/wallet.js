@@ -50,14 +50,21 @@ function WalletComponent(props) {
   useEffect((e) => {
     // poll the pending tips
     console.log(session);
-    if (session && session.user && session.user.address) {
+    if (session.user && session.user.address) {
+      window.clearInterval(timer);
+      setTimer(0);
       return; // we don't need to check pending tips if the user already exists
     }
-    window.setInterval(async (e) => {
+    if (timer > 0) {
+      console.log("Clearing Timer");
+      window.clearInterval(timer);
+    }
+    setTimer(window.setInterval(async (e) => {
       const result = await getPendingTips();
       setPendingTips(+result.pending > 0);
-    }, 15000);
-  });
+    }, 15000));
+  }, [session.user.address]);
+
 
   return (
     <>
