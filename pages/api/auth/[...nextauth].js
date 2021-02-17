@@ -22,7 +22,7 @@ const options = {
     // The second argument can be used to pass custom models and schemas
     {
       models: {
-        User: Models.User,
+        users: Models.users,
       },
     }
   ),
