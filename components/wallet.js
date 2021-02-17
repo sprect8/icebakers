@@ -42,10 +42,9 @@ function WalletComponent(props) {
     props.accounts && props.accounts[0]
   );
   
-  const [open, setOpened] = React.useState(false);
-  const [inProgress, setInProgress] = React.useState(false);
   const [pendingTips, setPendingTips] = React.useState(false);
   const [session] = useSession();
+  const [timer, setTimer] = useState(0);
 
   useEffect((e) => {
     // poll the pending tips
