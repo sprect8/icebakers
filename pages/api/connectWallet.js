@@ -33,9 +33,7 @@ const handler = async (req, res) => {
     }
 
     const updatedAddress = JSON.parse(req.body).address;
-
     console.log(`Authenticated user has ${email}, we are updating them ${updatedAddress}`)    
-    const updatedAddress = JSON.parse(req.body).address;
 
     const Web3 = await resolveWeb3();
     const accounts = await Web3.eth.getAccounts();
