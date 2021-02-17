@@ -1,7 +1,7 @@
 import Web3Container from "../lib/Web3Container";
 import { getPendingTips, connectWallet } from "../lib/tipsService";
-import React, { useEffect } from "react";
-import { useSession, signIn, signOut } from 'next-auth/client'
+import React, { useEffect, useState } from "react";
+import { useSession } from 'next-auth/client'
 
 async function tipFriend({ friend, amount, contract, wallet, web3 }) {
   console.log(amount);
