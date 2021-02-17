@@ -10,7 +10,6 @@ export default class User extends Adapters.TypeORM.Models.User.model {
 }
 
 export const UserSchema = {
-  name: "user",
   target: User,
   columns: {
     ...Adapters.TypeORM.Models.User.schema.columns,
