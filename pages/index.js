@@ -4,6 +4,7 @@ import Companies from "../components/companies";
 import Wallet from "../components/wallet";
 
 // Home is where the code is
+// Rebuild
 export default function Home() {
   const [session, loading] = useSession();
 
