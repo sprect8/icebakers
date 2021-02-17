@@ -3,6 +3,7 @@ import { signin, signout, useSession } from "next-auth/client";
 import Companies from "../components/companies";
 import Wallet from "../components/wallet";
 
+// Home is where the code is
 export default function Home() {
   const [session, loading] = useSession();
 
